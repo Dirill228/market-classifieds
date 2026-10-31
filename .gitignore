@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Environment
+server/.env
+.env
+
+# Database
+db/*.db
+db/*.db-shm
+db/*.db-wal
+
+# Uploads
+server/uploads/*
+
+# OS
+Thumbs.db
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temp
+/tmp/

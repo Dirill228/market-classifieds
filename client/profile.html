@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Личный кабинет — Маркет</title>
+  <meta name="description" content="Личный кабинет Маркета: мои объявления, статистика просмотров, избранное, сохранённые поиски, баланс и настройки профиля.">
+  <meta name="theme-color" content="#0A2540">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/fonts/fonts.css">
+  <script src="/js/theme-init.js"></script>
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/pages.css">
+</head>
+<body data-requires-auth="true">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <header class="site-header" data-site-header></header>
+
+  <main id="main">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="/index.html">Главная</a>
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg>
+        <span aria-current="page">Личный кабинет</span>
+      </nav>
+    </div>
+
+    <div class="container profile-layout">
+      <nav class="side-nav" aria-label="Разделы кабинета">
+        <button class="side-nav__item is-active" type="button" data-tab-link="listings">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1.2" fill="currentColor" stroke="none"/><circle cx="4" cy="12" r="1.2" fill="currentColor" stroke="none"/><circle cx="4" cy="18" r="1.2" fill="currentColor" stroke="none"/></svg>
+          Мои объявления
+        </button>
+        <button class="side-nav__item" type="button" data-tab-link="favorites">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-9a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 4.6-7 9-7 9Z"/></svg>
+          Избранное
+        </button>
+        <a class="side-nav__item" href="/messages.html">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 15.5a2.5 2.5 0 0 1-2.5 2.5H8l-4 3v-14A2.5 2.5 0 0 1 6.5 4.5h11A2.5 2.5 0 0 1 20 7Z"/></svg>
+          Сообщения
+        </a>
+        <button class="side-nav__item" type="button" data-tab-link="balance">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5A2 2 0 0 1 5.5 6.5h13a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2Z"/><path d="M3.5 8.5V7A1.5 1.5 0 0 1 5 5.5h11"/><circle cx="16.5" cy="13" r="1.2" fill="currentColor" stroke="none"/></svg>
+          Баланс
+        </button>
+        <button class="side-nav__item" type="button" data-tab-link="settings">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 14.5a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5v.2a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1H2a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3H8a1.6 1.6 0 0 0 1-1.5V2a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8V8a1.6 1.6 0 0 0 1.5 1h.2a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1Z"/></svg>
+          Настройки
+        </button>
+        <div class="divider" style="margin:8px 4px"></div>
+        <button class="side-nav__item" type="button" id="logout-btn" style="color:var(--danger-600)">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 20H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h3"/><path d="M15.5 8.5 19 12l-3.5 3.5"/><path d="M19 12H9"/></svg>
+          Выйти
+        </button>
+      </nav>
+
+      <div class="stack stack-5">
+        <div class="profile-hero" id="profile-hero"></div>
+
+        <!-- Мои объявления -->
+        <section data-tab="listings">
+          <div class="stat-grid mb-4" id="stat-grid"></div>
+
+          <div class="chart-card mb-4">
+            <div class="chart-card__head">
+              <div>
+                <h3>Просмотры объявлений</h3>
+                <div class="chart-card__total" id="chart-total"></div>
+              </div>
+              <span class="badge badge--soft">Последние 30 дней</span>
+            </div>
+            <svg class="chart-svg" id="views-chart" role="img" aria-label="График просмотров объявлений за 30 дней"></svg>
+          </div>
+
+          <div class="table-wrap">
+            <div class="table-toolbar">
+              <div class="tabs" role="tablist" id="listing-tabs"></div>
+              <a class="btn btn--primary btn--sm" href="/create.html" style="margin-left:auto">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                Добавить
+              </a>
+            </div>
+            <div class="table-scroll">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Объявление</th>
+                    <th scope="col">Цена</th>
+                    <th scope="col">Статус</th>
+                    <th scope="col">Просмотры</th>
+                    <th scope="col">Дата</th>
+                    <th scope="col"><span class="visually-hidden">Действия</span></th>
+                  </tr>
+                </thead>
+                <tbody id="listings-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Избранное -->
+        <section data-tab="favorites" hidden>
+          <div class="section-head">
+            <div>
+              <h2 style="font-size:20px">Избранное</h2>
+              <p class="section-sub">Объявления, которые вы сохранили. Мы сообщим, если цена изменится.</p>
+            </div>
+          </div>
+          <div class="listing-grid" id="favorites-grid"></div>
+
+          <div class="content-block mt-6">
+            <div class="content-block__head">
+              <h2>Сохранённые поиски</h2>
+            </div>
+            <div class="verify-list" id="saved-searches"></div>
+          </div>
+        </section>
+
+        <!-- Баланс -->
+        <section data-tab="balance" hidden>
+          <div class="content-block">
+            <div class="content-block__head">
+              <h2>Баланс и продвижение</h2>
+            </div>
+            <div id="balance-body"></div>
+          </div>
+        </section>
+
+        <!-- Настройки -->
+        <section data-tab="settings" hidden>
+          <div class="content-block">
+            <div class="content-block__head">
+              <h2>Верификация и рейтинг</h2>
+            </div>
+            <div class="verify-list" id="verify-list"></div>
+          </div>
+
+          <div class="content-block">
+            <div class="content-block__head">
+              <h2>Профиль</h2>
+            </div>
+            <form class="form-grid form-grid--2" id="settings-form" novalidate>
+              <div class="field">
+                <label class="field__label" for="settings-name">Имя и фамилия</label>
+                <input class="input" id="settings-name" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label class="field__label" for="settings-email">E-mail</label>
+                <input class="input" id="settings-email" name="email" type="email" autocomplete="email" disabled>
+                <span class="field__hint">E-mail изменить нельзя — напишите в поддержку.</span>
+              </div>
+              <div class="field">
+                <label class="field__label" for="settings-phone">Телефон</label>
+                <input class="input" id="settings-phone" name="phone" type="tel" autocomplete="tel" placeholder="+7 (900) 000-00-00">
+              </div>
+              <div class="field">
+                <label class="field__label" for="settings-city">Город</label>
+                <input class="input" id="settings-city" name="city" type="text" autocomplete="address-level2">
+              </div>
+              <div class="span-2">
+                <button class="btn btn--primary" type="submit">Сохранить изменения</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="content-block">
+            <div class="content-block__head">
+              <h2>Смена пароля</h2>
+            </div>
+            <form class="form-grid form-grid--3" id="password-form" novalidate>
+              <div class="field">
+                <label class="field__label" for="current-password">Текущий пароль</label>
+                <input class="input" id="current-password" name="currentPassword" type="password" autocomplete="current-password" required>
+              </div>
+              <div class="field">
+                <label class="field__label" for="new-password">Новый пароль</label>
+                <input class="input" id="new-password" name="newPassword" type="password" autocomplete="new-password" minlength="8" required>
+              </div>
+              <div class="field">
+                <label class="field__label" for="new-password-confirm">Повторите пароль</label>
+                <input class="input" id="new-password-confirm" name="newPasswordConfirm" type="password" autocomplete="new-password" minlength="8" required>
+              </div>
+              <div class="span-2">
+                <button class="btn btn--outline" type="submit">Обновить пароль</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="alert alert--warn">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4.5 21 20H3Z"/><path d="M12 10v4.2"/></svg>
+            <span><strong>Удаление профиля.</strong> Все объявления будут сняты с публикации, история переписки удалится в течение 30 дней. Напишите на support@market.ru с указанием e-mail.</span>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" data-site-footer></footer>
+  <nav class="bottom-nav" data-bottom-nav aria-label="Мобильная навигация"></nav>
+
+  <script type="module" src="/js/profile.js"></script>
+</body>
+</html>

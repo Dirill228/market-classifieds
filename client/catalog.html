@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Каталог объявлений — Маркет</title>
+  <meta name="description" content="Каталог объявлений Маркета: фильтры по цене, категории, городу и состоянию товара. Более 40 категорий и тысячи актуальных предложений.">
+  <meta name="theme-color" content="#0A2540">
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/fonts/fonts.css">
+  <script src="/js/theme-init.js"></script>
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/pages.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <header class="site-header" data-site-header></header>
+
+  <main id="main">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="/index.html">Главная</a>
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg>
+        <span aria-current="page">Каталог</span>
+      </nav>
+    </div>
+
+    <div class="container catalog-layout">
+      <aside class="filters" id="filters" aria-label="Фильтры поиска"></aside>
+
+      <div>
+        <div class="row between wrap row-3 mb-4">
+          <div class="grow">
+            <h1 id="catalog-title" style="font-size:clamp(1.375rem,1.1rem + 1vw,1.75rem)">Все объявления</h1>
+            <p class="text-sm text-muted mt-1" id="result-summary">Загружаем объявления…</p>
+          </div>
+          <div class="row row-2 wrap">
+            <button class="btn btn--outline btn--sm filters-open-btn" type="button" id="filters-open">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 6h17l-6.5 7.5V20l-4-2.2v-4.3Z"/></svg>
+              Фильтры
+            </button>
+            <button class="btn btn--ghost btn--sm" type="button" id="save-search">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5h12v16l-6-4-6 4Z"/></svg>
+              Сохранить поиск
+            </button>
+          </div>
+        </div>
+
+        <div class="catalog-toolbar">
+          <span class="catalog-toolbar__count" id="catalog-count">Найдено <strong>0</strong> объявлений</span>
+
+          <div class="catalog-toolbar__right">
+            <label class="visually-hidden" for="catalog-query">Поиск по каталогу</label>
+            <div class="input-group" style="min-width:180px">
+              <span class="input-group__icon">
+                <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+              </span>
+              <input class="input" id="catalog-query" type="search" placeholder="Поиск по названию" style="min-height:36px;font-size:13px">
+            </div>
+
+            <label class="visually-hidden" for="sort-select">Сортировка</label>
+            <select class="sort-select" id="sort-select">
+              <option value="date">Сначала новые</option>
+              <option value="price_asc">Сначала дешёвые</option>
+              <option value="price_desc">Сначала дорогие</option>
+              <option value="popularity">По популярности</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="active-filters" id="active-filters" hidden></div>
+
+        <div class="listing-grid" id="catalog-grid" aria-live="polite"></div>
+
+        <div class="text-center mt-6">
+          <button class="btn btn--outline" type="button" id="load-more" hidden>Показать ещё</button>
+        </div>
+
+        <nav class="pagination" id="pagination" aria-label="Постраничная навигация"></nav>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" data-site-footer></footer>
+  <nav class="bottom-nav" data-bottom-nav aria-label="Мобильная навигация"></nav>
+
+  <script type="module" src="/js/catalog.js"></script>
+</body>
+</html>

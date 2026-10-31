@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Маркет — объявления рядом с вами</title>
+  <meta name="description" content="Маркет — классифайд-площадка: авто, недвижимость, электроника, работа и услуги. Более 40 категорий, проверенные продавцы, безопасные сделки.">
+  <meta name="theme-color" content="#0A2540">
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/fonts/fonts.css">
+  <script src="/js/theme-init.js"></script>
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/pages.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header class="site-header" data-site-header></header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="hero-eyebrow">
+            <span class="dot"></span>
+            Работаем в 12 городах России
+          </span>
+
+          <h1>Покупайте и продавайте <em>рядом с домом</em></h1>
+          <p class="hero-lead">
+            Тысячи актуальных объявлений от частных продавцов и компаний. Проверенные профили,
+            честные цены и переписка без посредников.
+          </p>
+
+          <div class="hero-search">
+            <form class="search-box" role="search" action="/catalog.html" method="get">
+              <div class="search-box__field">
+                <label class="visually-hidden" for="hero-search-input">Что вы ищете?</label>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                <input id="hero-search-input" type="search" name="q" placeholder="iPhone 15, квартира в Казани, велосипед…"
+                  autocomplete="off" aria-autocomplete="list" aria-controls="hero-search-suggest" aria-expanded="false">
+              </div>
+              <button class="btn btn--primary btn--lg search-box__submit" type="submit">Найти</button>
+              <div class="suggest-panel" id="hero-search-suggest" role="listbox" hidden></div>
+            </form>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="hero-metric">
+              <strong id="metric-listings">—</strong>
+              <span>активных объявлений</span>
+            </div>
+            <div class="hero-metric">
+              <strong id="metric-users">—</strong>
+              <span>продавцов и покупателей</span>
+            </div>
+            <div class="hero-metric">
+              <strong id="metric-cities">—</strong>
+              <span>городов присутствия</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-showcase" id="hero-showcase" aria-label="Популярные объявления"></div>
+      </div>
+    </section>
+
+    <section class="page-section" aria-labelledby="categories-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 id="categories-title">Категории</h2>
+            <p class="section-sub">Выберите раздел — в каждом собраны объявления из вашего города и по всей России.</p>
+          </div>
+          <a class="section-link" href="/catalog.html">
+            Весь каталог
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m14 6 6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="category-grid" id="category-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="page-section" style="padding-top:0" aria-labelledby="recommended-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 id="recommended-title">Рекомендуем вам</h2>
+            <p class="section-sub">Подборка на основе просмотров за последнюю неделю.</p>
+          </div>
+          <a class="section-link" href="/catalog.html?sort=popularity">
+            Смотреть все
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m14 6 6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <div class="rail-wrap" data-rail>
+          <button class="rail-nav rail-nav--prev" type="button" aria-label="Прокрутить влево">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14.5 6-6 6 6 6"/></svg>
+          </button>
+          <div class="rail" id="recommended-rail" aria-live="polite"></div>
+          <button class="rail-nav rail-nav--next" type="button" aria-label="Прокрутить вправо">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section" style="padding-top:0" aria-labelledby="urgent-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 id="urgent-title">
+              Срочные объявления
+              <span class="badge badge--urgent" style="vertical-align:middle;margin-left:8px">
+                до конца дня <span id="urgent-timer">—</span>
+              </span>
+            </h2>
+            <p class="section-sub">Продавцы готовы к сделке сегодня — успейте договориться.</p>
+          </div>
+          <a class="section-link" href="/catalog.html?urgent=true">
+            Все срочные
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m14 6 6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="listing-grid" id="urgent-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="page-section" style="padding-top:0" aria-labelledby="seo-title">
+      <div class="container">
+        <div class="content-block">
+          <div class="content-block__head">
+            <h2 id="seo-title">Маркет — площадка объявлений без посредников</h2>
+          </div>
+          <p class="description-text">
+            «Маркет» помогает людям и компаниям находить друг друга в 12 крупнейших городах России.
+            Ежедневно на площадке появляются сотни новых объявлений: автомобили с прозрачной историей,
+            квартиры для покупки и аренды, техника, мебель, товары для детей и животных, а также
+            предложения о работе и услугах.
+          </p>
+          <p class="description-text" style="margin-top:12px">
+            Мы проверяем профили продавцов, ограничиваем спам и следим за соблюдением правил публикации.
+            Переписка ведётся во встроенном чате — так вы не теряете историю договорённостей и не
+            передаёте номер телефона до того, как убедитесь в надёжности продавца.
+          </p>
+
+          <h3 style="margin-top:24px;font-size:16px">Популярные запросы</h3>
+          <ul class="chip-row" id="popular-queries" style="margin-top:12px"></ul>
+
+          <div class="accordion" style="margin-top:24px">
+            <div class="accordion__item">
+              <button class="accordion__trigger" type="button" data-accordion-trigger aria-expanded="false" aria-controls="seo-panel-1">
+                Как безопасно купить товар на «Маркете»?
+                <span class="accordion__icon">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9.5 6 6 6-6"/></svg>
+                </span>
+              </button>
+              <div class="accordion__panel" id="seo-panel-1">
+                <div>
+                  <div class="accordion__content">
+                    Встречайтесь в людных местах, проверяйте товар до оплаты и сверяйте серийные номера
+                    с документами. Не переводите предоплату на карту незнакомого человека и не переходите
+                    по ссылкам для оплаты, которые приходят в мессенджерах. Если объявление кажется
+                    подозрительным — нажмите «Пожаловаться», модераторы проверят его в течение 24 часов.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion__item">
+              <button class="accordion__trigger" type="button" data-accordion-trigger aria-expanded="false" aria-controls="seo-panel-2">
+                Сколько стоит разместить объявление?
+                <span class="accordion__icon">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9.5 6 6 6-6"/></svg>
+                </span>
+              </button>
+              <div class="accordion__panel" id="seo-panel-2">
+                <div>
+                  <div class="accordion__content">
+                    Базовое размещение бесплатно для частных продавцов и действует 30 дней. Платными
+                    являются только продвижение и дополнительные возможности: срочная публикация — 149 ₽,
+                    VIP-размещение на 7 дней — 399 ₽. Тариф можно выбрать при публикации или изменить
+                    позже в личном кабинете.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion__item">
+              <button class="accordion__trigger" type="button" data-accordion-trigger aria-expanded="false" aria-controls="seo-panel-3">
+                Как связаться с продавцом?
+                <span class="accordion__icon">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9.5 6 6 6-6"/></svg>
+                </span>
+              </button>
+              <div class="accordion__panel" id="seo-panel-3">
+                <div>
+                  <div class="accordion__content">
+                    На странице объявления нажмите «Написать продавцу» — откроется встроенный чат.
+                    Телефон раскрывается отдельной кнопкой и доступен авторизованным пользователям.
+                    Все диалоги сохраняются в разделе «Сообщения», поэтому к договорённостям можно
+                    вернуться в любой момент.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-site-footer></footer>
+  <nav class="bottom-nav" data-bottom-nav aria-label="Мобильная навигация"></nav>
+
+  <script type="module" src="/js/home.js"></script>
+</body>
+</html>

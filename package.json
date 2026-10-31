@@ -1,0 +1,27 @@
+{
+  "name": "market-classifieds",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Маркет — классифайд-платформа: Express API, PostgreSQL, адаптивный клиент",
+  "type": "module",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node --watch server/server.js",
+    "seed": "node db/seed.js",
+    "test:api": "node scripts/smoke-api.js"
+  },
+  "engines": {
+    "node": ">=22.5"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.2",
+    "mysql2": "^3.24.6",
+    "pg": "^8.23.1"
+  }
+}
